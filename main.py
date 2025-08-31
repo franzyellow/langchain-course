@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from langchain import PromptTemplate
 from langchain_deepseek import ChatDeepSeek
+from langchain_ollama import ChatOllama
 
 
 load_dotenv()
@@ -28,6 +29,7 @@ def main():
     )
 
     llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
+    #llm = ChatOllama(model="gemma3:1b", temperature=0)
     chain = summary_prompt_template | llm # Inputing from template to LLM, leading to a runnable object
     response = chain.invoke({"information": information})
     print(response.content)
