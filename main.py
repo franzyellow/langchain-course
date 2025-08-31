@@ -18,6 +18,8 @@ def main():
     Given the information {information} about a historical fact, I would like you to create:
     1. A short summary
     2. The two most interesting points about it
+
+    Strictly stay to this format and do not produce anything else.
     """
 
     summary_prompt_template = PromptTemplate(
