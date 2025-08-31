@@ -30,14 +30,9 @@ def main():
         """
 
     final_prompt_template = ChatPromptTemplate.from_messages([
-        ("system", "You are a concise assistant for text summarizatio."),
+        ("system", "You are a concise assistant for text summarization."),
         ("human", summary_template),
     ])
-
-    summary_prompt_template = PromptTemplate(
-        input_variables=["information"],
-        template=summary_template
-    )
 
     hf_llm = HuggingFaceEndpoint(
         repo_id="Qwen/Qwen3-4B-Instruct-2507",
