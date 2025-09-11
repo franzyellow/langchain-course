@@ -33,7 +33,7 @@ if __name__ == "__main__":
     combine_docs_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
     retrieval_chain = create_retrieval_chain(retriever=vectorstore.as_retriever(), combine_docs_chain=combine_docs_chain)
 
-    res = retrieval_chain.invoke({"input": "中共的民族区域的设置和清朝与民国的政区制度有继承关系吗？"})
+    res = retrieval_chain.invoke({"input": "中共的民族区域的设置和清朝与民国的政区制度有继承关系吗？请详细介绍一下"})
     print(res['answer'])
 
 
